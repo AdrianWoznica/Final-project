@@ -81,7 +81,7 @@ public class Task1 {
 
     @Then("The program checks if the data are correct, create a new address and reload to the addresses page")
     public void checkAndSaveNewAddress() {
-        // Sprawdzamy, czy nowy adres pojawił się na liście
+        // Zapisujemy nowy adres i sprawdzamy, czy nowy adres pojawił się na liście
         driver.findElement(By.xpath("//*[@id=\"content\"]/div/div/form/footer/button")).click();
 
 

@@ -62,6 +62,13 @@ public class Task2 {
     public void iSelectMSize() {
         driver.findElement(By.xpath("//*[@id=\"group_1\"]")).click();
         driver.findElement(By.xpath("//*[@id=\"group_1\"]/option[2]")).click();
+
+        // Czekaj chwilę, aby zobaczyć efekt na stronie (opcjonalnie)
+        try {
+            Thread.sleep(3000); // 3 sekundy
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("I select quantity value of 5")
@@ -70,7 +77,7 @@ public class Task2 {
         WebElement button = driver.findElement(By.cssSelector(".btn.btn-touchspin.js-touchspin.bootstrap-touchspin-up"));
 
         // Kliknij przycisk zwiększania 4 razy, aby zmienić ilość na 5
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             button.click();
         }
 
@@ -124,6 +131,13 @@ public class Task2 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@href='https://mystore-testlab.coderslab.pl/index.php?controller=order' and @class='btn btn-primary']")));
         checkoutButton.click();
+
+        // Czekaj chwilę, aby zobaczyć efekt na stronie (opcjonalnie)
+        try {
+            Thread.sleep(3000); // 3 sekundy
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("I click continue")
@@ -131,6 +145,14 @@ public class Task2 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@name='confirm-addresses' and @class='btn btn-primary continue float-xs-right']")));
         continueButton.click();
+
+        // Czekaj chwilę, aby zobaczyć efekt na stronie (opcjonalnie)
+        try {
+            Thread.sleep(3000); // 3 sekundy
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @And("I click continue to payment")
@@ -139,6 +161,13 @@ public class Task2 {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement continueButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@name='confirmDeliveryOption' and @class='continue btn btn-primary float-xs-right']")));
         continueButton.click();
+
+        // Czekaj chwilę, aby zobaczyć efekt na stronie (opcjonalnie)
+        try {
+            Thread.sleep(3000); // 3 sekundy
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @And("I select a payment method")
